@@ -1,0 +1,75 @@
+---
+import Card from '../ui/Card.astro';
+import Section from '../ui/Section.astro';
+---
+
+<Section background='white'>
+  <div class='text-center mb-16'>
+    <div
+      class='inline-block px-4 py-2 mb-4 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full'
+    >
+      Nossa Essência
+    </div>
+    <h2 class='text-4xl md:text-5xl font-bold text-gray-900 mb-4'>
+      Identidade <span
+        class='text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600'
+        >Organizacional</span
+      >
+    </h2>
+    <p class='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
+      Os pilares que sustentam nosso compromisso com a excelência e guiam cada
+      negociação.
+    </p>
+  </div>
+
+  <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+    {
+      [
+        {
+          title: 'MISSÃO',
+          description:
+            'Facilitar a compra de peças e acessórios para carretas e caminhões através de uma entrega rápida, oferecendo o maior mix de produtos num único lugar e preços muito baixos.',
+          // Ícone de Alvo/Target
+          icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm0-13a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6z" />
+        </svg>`,
+        },
+        {
+          title: 'VISÃO',
+          description:
+            'Ser referência de empresa distribuidora reconhecida pelos clientes pelo melhor atendimento e negociação no mercado nacional.',
+          // Ícone de Olho/Visão
+          icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>`,
+        },
+        {
+          title: 'VALORES',
+          description:
+            'Dedicação, Transparência nas relações de negócios. Profissionalismo e Respeito no tratamento entre funcionários, clientes, representantes e fornecedores.',
+          // Ícone de Diamante/Valor
+          icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        </svg>`,
+        },
+      ].map((item, index) => (
+        <Card
+          hover
+          class='text-center animate-fadeInUp group p-8'
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class='flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-xl bg-linear-to-br from-blue-500 to-teal-500 text-white shadow-lg group-hover:scale-110 transition-transform duration-300'>
+            <div set:html={item.icon} />
+          </div>
+
+          <h3 class='text-2xl font-bold text-gray-900 mb-4'>{item.title}</h3>
+
+          <p class='text-gray-600 leading-relaxed text-base'>
+            {item.description}
+          </p>
+        </Card>
+      ))
+    }
+  </div>
+</Section>
