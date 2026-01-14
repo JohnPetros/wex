@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets';
+import { CheckCircle2 } from 'lucide-react';
+
+// Sugestão de imagem: Algo que remeta a aperto de mão, equipe reunida ou sustentabilidade
+import commitmentImg from '@assets/wex-manifest.png';
+import ImageReveal from '../react/ImageReveal';
+
+const commitments = [
+  'Cultivar o respeito mútuo e defender a igualdade no ambiente de trabalho, sem discriminação de etnia, credo ou gênero.',
+  'Assegurar as melhores condições de trabalho em um ambiente seguro e saudável, investindo em formação constante.',
+  'Integrar qualidade e segurança às rotinas diárias, agregando valor ao negócio através do sistema de gestão integrado.',
+  'Praticar a sustentabilidade com uso racional dos recursos naturais e destinação adequada de resíduos.',
+  'Atender rigorosamente à legislação vigente e diretrizes da organização.',
+];
+---
+
+<section class='py-24 bg-white overflow-hidden'>
+  <div class='container mx-auto px-4'>
+    <div class='flex flex-col lg:flex-row items-center gap-16'>
+      <div class='lg:w-1/2'>
+        <div
+          class='inline-block px-4 py-2 mb-6 bg-blue-50 text-blue-700 text-sm font-bold rounded-full uppercase tracking-wide'
+        >
+          Manifesto WEX
+        </div>
+
+        <h2
+          class='text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight'
+        >
+          A WEX Distribuidora se <span
+            class='text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-500'
+            >compromete a:</span
+          >
+        </h2>
+
+        <p class='text-lg text-slate-600 mb-8 leading-relaxed'>
+          Nossa conduta é guiada por princípios sólidos que visam não apenas o
+          sucesso do negócio, mas o bem-estar da nossa equipe e da comunidade.
+        </p>
+
+        <ul class='space-y-4'>
+          {
+            commitments.map(item => (
+              <li class='flex items-start gap-3'>
+                <div class='shrink-0 mt-1'>
+                  <CheckCircle2 className='w-6 h-6 text-green-500' />
+                </div>
+                <span class='text-slate-700 leading-relaxed text-base'>
+                  {item}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <ImageReveal client:load delay={0.1}>
+        <div
+          class='relative aspect-4/3 group overflow-hidden rounded-2xl shadow-2xl'
+        >
+          <Image
+            src={commitmentImg}
+            alt='Commitment to WEX'
+            class='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
+            width={800}
+            height={800}
+          />
+        </div>
+      </ImageReveal>
+    </div>
+  </div>
+</section>
