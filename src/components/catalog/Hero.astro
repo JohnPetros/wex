@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+
+import HeroImage from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
+---
+
+<section
+  class='relative h-[70vh] min-h-[500px] flex items-center overflow-hidden'
+>
+  <div class='absolute inset-0'>
+    <Image
+      src={HeroImage}
+      alt='Estoque de Peças Wex'
+      class='w-full h-full object-cover'
+      width={2070}
+      height={1380}
+    />
+    <div
+      class='absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50'
+    >
+    </div>
+  </div>
+
+  <div class='container mx-auto relative z-10 px-4 sm:px-6 lg:px-8'>
+    <div class='max-w-4xl mx-auto text-center'>
+      <div
+        class='inline-flex items-center px-4 py-2 mb-6 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg'
+      >
+        <svg class='w-4 h-4 mr-2' fill='currentColor' viewBox='0 0 20 20'>
+          <path
+            fill-rule='evenodd'
+            d='M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z'
+            clip-rule='evenodd'></path>
+        </svg>
+        Catálogo Completo
+      </div>
+
+      <h1
+        class='text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight'
+      >
+        Encontre a <span
+          class='text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400'
+          >Peça Ideal</span
+        > para seu Implemento
+      </h1>
+
+      <p
+        class='text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed'
+      >
+        Trabalhamos com a linha completa de reposição para todas as grandes
+        montadoras de implementos. Selecione sua categoria abaixo:
+      </p>
+    </div>
+  </div>
+</section>
