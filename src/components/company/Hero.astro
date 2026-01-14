@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+
+// Use a imagem institucional (Armazém/Equipe)
+import AboutHeroImage from '@assets/photo-1566576721346-d4a3b4eaeb55.jpg';
+---
+
+<section
+  class='relative h-[70vh] min-h-[500px] flex items-center overflow-hidden'
+>
+  <div class='absolute inset-0'>
+    <Image
+      src={AboutHeroImage}
+      alt='Grupo WEX Brasil'
+      class='w-full h-full object-cover'
+      width={2070}
+      height={1380}
+    />
+    <div
+      class='absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50'
+    >
+    </div>
+  </div>
+
+  <div class='container mx-auto relative z-10 px-4 sm:px-6 lg:px-8'>
+    <div class='max-w-4xl mx-auto text-center'>
+      <div
+        class='inline-flex items-center px-4 py-2 mb-6 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg'
+      >
+        <svg class='w-4 h-4 mr-2' fill='currentColor' viewBox='0 0 20 20'>
+          <path
+            fill-rule='evenodd'
+            d='M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4zm3 1h6v4H7V5zm0 6h6v2H7v-2zm0 4h6v2H7v-2z'
+            clip-rule='evenodd'></path>
+        </svg>
+        Grupo WEX Brasil
+      </div>
+
+      <h1
+        class='text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight'
+      >
+        Empreendendo com <span
+          class='text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400'
+        >
+          Responsabilidade
+        </span>
+      </h1>
+
+      <p
+        class='text-xl md:text-2xl text-slate-200 mb-8 max-w-4xl mx-auto leading-relaxed'
+      >
+        Buscamos alternativas de qualidade, preço justo e sustentabilidade.
+        Garantimos aos clientes e à comunidade o papel de uma empresa
+        comprometida com as boas práticas de mercado.
+      </p>
+    </div>
+  </div>
+</section>
