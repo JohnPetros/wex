@@ -1,49 +1,49 @@
 import { motion } from 'motion/react';
-import { Warehouse, Truck, Package, BarChart3, Shield, Headphones } from 'lucide-react';
+import { Truck, Box, Snowflake, Hammer, Layers, Database } from 'lucide-react';
 
-import warehouseImg from '@assets/photo-1553413077-190dd305871c.jpg';
-import truckImg from '@assets/photo-1601584115197-04ecc0da31d7.jpg';
-import packageImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
-import barChart3Img from '@assets/photo-1551288049-bebda4e38f71.jpg';
-import shieldImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
-import headphonesImg from '@assets/photo-1486312338219-ce68d2c6f44d.jpg';
+import SiderCategory from '@assets/sider-category.png';
+import TruckCategory from '@assets/truck-category.png';
+import RefrigerationCategory from '@assets/refrigeration-category.png';
+import TipperCategory from '@assets/tipper-category.png';
+import BodyCategory from '@assets/body-category.png';
+import SiloCategory from '@assets/silo-category.png';
 
 const features = [
   {
-    icon: Warehouse,
-    title: 'Advanced Warehousing',
-    description: 'Climate-controlled facilities with automated inventory systems and 24/7 security.',
-    image: warehouseImg,
-  },
-  {
     icon: Truck,
-    title: 'Fast Transportation',
-    description: 'Multi-modal logistics network ensuring rapid delivery across all destinations.',
-    image: truckImg,
+    title: 'Linha Sider & Asa Delta',
+    description: 'Lonas, catracas, roldanas e esticadores para Sider padrão e Asa Delta.',
+    image: SiderCategory,  
   },
   {
-    icon: Package,
-    title: 'Quality Manufacturing',
-    description: 'ISO-certified production with precision engineering and quality control.',
-    image: packageImg,
+    icon: Box,
+    title: 'Baú de Alumínio',
+    description: 'Perfis, chapas, colunas e revestimentos para furgão duralumínio.',
+    image: TruckCategory, 
   },
   {
-    icon: BarChart3,
-    title: 'Real-Time Analytics',
-    description: 'Complete supply chain visibility with advanced tracking and reporting.',
-    image: barChart3Img,
+    icon: Snowflake,
+    title: 'Linha Frigorífica',
+    description: 'Borracha de porta, isolamento, dobradiças e trincos para câmaras frias.',
+    image: RefrigerationCategory, 
   },
   {
-    icon: Shield,
-    title: 'Secure Operations',
-    description: 'Industry-leading security protocols protecting your valuable assets.',
-    image: shieldImg,
+    icon: Hammer,
+    title: 'Peças para Basculantes',
+    description: 'Peças para sistema hidráulico, travas de segurança e articulações.',
+    image: TipperCategory,  
   },
   {
-    icon: Headphones,
-    title: '24/7 Support',
-    description: 'Dedicated teams available around the clock to ensure seamless operations.',
-    image: headphonesImg,
+    icon: Layers,
+    title: 'Carroceria Aberta',
+    description: 'Tampas, ganchos, fueiros e acessórios para grade baixa e graneleiro.',
+    image: BodyCategory, 
+  },
+  {
+    icon: Database,
+    title: 'Silos e Tanques',
+    description: 'Válvulas, conexões, vedações e peças para transporte a granel.',
+    image: SiloCategory,  
   },
 ];
 
@@ -95,4 +95,3 @@ export default function FeatureShowcase() {
     </div>
   );
 }
-
