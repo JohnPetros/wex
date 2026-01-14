@@ -1,0 +1,102 @@
+---
+import Section from '../../components/ui/Section.astro';
+import Card from '../../components/ui/Card.astro';
+
+const brands = [
+  {
+    // Scania (Mantendo destaque, comum em vermelho/laranja ou azul)
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+    title: 'Scania',
+    subtitle: 'Elétrica e Acessórios',
+    description: 'Faróis, lanternas e componentes elétricos para linha pesada.',
+    color: 'from-blue-500 to-blue-600',
+  },
+  {
+    // Volvo (Geralmente associado a prata/azul escuro, usaremos Indigo para variar)
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    title: 'Volvo',
+    subtitle: 'Elétrica e Acessórios',
+    description: 'Iluminação e acabamentos de alta durabilidade para FH/FM.',
+    color: 'from-indigo-500 to-indigo-600',
+  },
+  {
+    // Mercedes-Benz (Cinza/Prata -> Slate)
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>`,
+    title: 'Mercedes-Benz',
+    subtitle: 'Elétrica e Acessórios',
+    description: 'Peças elétricas compatíveis com Axor, Actros e Atego.',
+    color: 'from-slate-500 to-slate-600',
+  },
+  {
+    // Volkswagen (Azul/Verde -> Teal para diferenciar do Scania)
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`,
+    title: 'Volkswagen',
+    subtitle: 'Elétrica e Acessórios',
+    description: 'Linha completa de reposição para Constellation e Delivery.',
+    color: 'from-teal-500 to-teal-600',
+  },
+  {
+    // Ford (Azul clássico -> Ciano/Sky para variar)
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+    title: 'Ford',
+    subtitle: 'Elétrica e Acessórios',
+    description: 'Componentes para Cargo e F-Maxx com garantia de qualidade.',
+    color: 'from-sky-500 to-sky-600',
+  },
+  {
+    // Iveco (Laranja/Amber para contraste)
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>`,
+    title: 'Iveco',
+    subtitle: 'Elétrica e Acessórios',
+    description:
+      'Peças de reposição focadas em elétrica para Stralis e Tector.',
+    color: 'from-orange-500 to-orange-600',
+  },
+];
+---
+
+<Section background='gradient'>
+  <div class='text-center mb-16'>
+    <div
+      class='inline-block px-4 py-2 mb-4 bg-white/80 backdrop-blur-sm text-primary-800 text-sm font-semibold rounded-full border border-primary-200'
+    >
+      Nossas Marcas
+    </div>
+    <h2 class='text-4xl md:text-5xl font-bold text-gray-900 mb-4'>
+      Montadoras <span
+        class='text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600'
+        >Atendidas</span
+      >
+    </h2>
+    <p class='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
+      Especialistas em Elétrica e Acessórios para as principais frotas do país.
+    </p>
+  </div>
+
+  <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+    {
+      brands.map((brand, index) => (
+        <Card
+          hover
+          class='text-center animate-fadeInUp group p-8'
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div
+            class={`w-16 h-16 mx-auto mb-6 rounded-xl bg-linear-to-br ${brand.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg text-white`}
+            set:html={brand.icon}
+          />
+
+          <h3 class='text-2xl font-bold text-gray-900 mb-1'>{brand.title}</h3>
+
+          <span class='inline-block px-3 py-1 mb-4 text-xs font-semibold text-slate-600 bg-slate-100 rounded-full uppercase tracking-wider'>
+            {brand.subtitle}
+          </span>
+
+          <p class='text-gray-600 text-sm leading-relaxed'>
+            {brand.description}
+          </p>
+        </Card>
+      ))
+    }
+  </div>
+</Section>
