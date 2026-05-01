@@ -1,10 +1,9 @@
 // Site configuration
 export const SITE = {
-  title: 'AstroFlow',
-  description:
-    'Leading provider of optimized logistics and manufacturing solutions with state-of-the-art facilities and industry expertise.',
+  title: 'Wex Distribuidora',
+  description: 'Distribuidora de peças para implementos de caminhões.',
   url: 'https://yourdomain.com',
-  author: 'AstroFlow',
+  author: 'Wex Distribuidora',
 } as const
 
 export const NAVIGATION = [

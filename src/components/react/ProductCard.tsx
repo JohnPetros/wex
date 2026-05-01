@@ -26,7 +26,7 @@ export default function ProductCard({
   description,
 }: ProductCardProps) {
   // Monta link do Zap se não for passado um específico
-  const finalWhatsappLink = `https://wa.me/551100000000?text=Olá, gostaria de cotar o item: ${title} (Cód: ${code || 'N/A'})`
+  const finalWhatsappLink = `https://wa.me/551100000000?text=Olá, gostaria de providenciar o item: ${title} (Cód: ${code || 'N/A'})`
 
   return (
     <div className='group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full overflow-hidden'>
@@ -98,7 +98,7 @@ export default function ProductCard({
             className='flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-blue-50 text-blue-600 font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 group/btn'
           >
             <MessageCircle className='w-4 h-4' />
-            Cotar Agora
+            providenciar Peça
             <ArrowRight className='w-4 h-4 opacity-0 -ml-2 group-hover/btn:opacity-100 group-hover/btn:ml-0 transition-all' />
           </a>
         </div>

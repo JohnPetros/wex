@@ -3,8 +3,18 @@ import * as Tabs from '@radix-ui/react-tabs'
 import { categories } from '@/constants/categories'
 
 export default function CatalogTabs() {
+  const categoryFromUrl =
+    typeof window !== 'undefined'
+      ? new URLSearchParams(window.location.search).get('category')
+      : null
+
+  const defaultCategory =
+    categoryFromUrl && categories.some((item) => item.id === categoryFromUrl)
+      ? categoryFromUrl
+      : categories[0].id
+
   return (
-    <Tabs.Root defaultValue={categories[0].id} className='w-full'>
+    <Tabs.Root defaultValue={defaultCategory} className='w-full'>
       <Tabs.List
         className='
   flex w-full overflow-x-auto flex-nowrap gap-2 

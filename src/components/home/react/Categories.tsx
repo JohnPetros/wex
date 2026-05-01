@@ -6,13 +6,14 @@ export default function Categories() {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {categories.map((category, index) => (
-        <motion.div
+        <motion.a
           key={category.title}
+          href={`/catalog?category=${category.id}`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className='group cursor-pointer'
+          className='group cursor-pointer block'
         >
           <div className='relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300'>
             {/* Image */}
@@ -45,7 +46,7 @@ export default function Categories() {
               <p className='text-sm text-gray-200 opacity-90'>{category.description}</p>
             </div>
           </div>
-        </motion.div>
+        </motion.a>
       ))}
     </div>
   )

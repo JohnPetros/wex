@@ -24,7 +24,7 @@ export const categories = [
     tab: SiderProductsTab,
   },
   {
-    id: 'bau',
+    id: 'truck',
     icon: Box,
     title: 'Baú de Alumínio',
     description: 'Perfis, chapas, colunas e revestimentos para furgão duralumínio.',
@@ -32,7 +32,7 @@ export const categories = [
     tab: TruckProductsTab,
   },
   {
-    id: 'frigorifica',
+    id: 'refrigeration',
     icon: Snowflake,
     title: 'Baú Frigorífico',
     description:
@@ -41,7 +41,7 @@ export const categories = [
     tab: RefrigerationProductsTab,
   },
   {
-    id: 'basculante',
+    id: 'hammer',
     icon: Hammer,
     title: 'Peças para Basculantes',
     description: 'Peças para sistema hidráulico, travas de segurança e articulações.',
@@ -49,7 +49,7 @@ export const categories = [
     tab: TipperProductsTab,
   },
   {
-    id: 'aberta',
+    id: 'flatbed',
     icon: Layers,
     title: 'Carroceria Aberta',
     description: 'Tampas, ganchos, fueiros e acessórios para grade baixa e graneleiro.',
