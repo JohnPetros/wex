@@ -71,7 +71,11 @@ src/
 npm run build
 ```
 
-The `dist/` folder can be deployed to any static host. The project includes a Netlify adapter.
+The project now builds as a plain static Astro site for Locaweb hosting.
+
+- Upload the contents of `dist/` to `public_html/`
+- The `public/.htaccess` file is copied into the build automatically for the Apache server
+- The GitHub Actions workflow deploys `dist/` to Locaweb via FTP
 
 ## License
 

@@ -1,4 +1,4 @@
-name: Deploy Astro to Locaweb
+name: Continous Deployment
 
 on:
   push:
